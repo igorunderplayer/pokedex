@@ -1,0 +1,93 @@
+:root {
+    --background: #f2f2f2;
+    --text: #000000;
+    --accent: #ff0000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #1d1d1d;
+        --text: #f1f1f1;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    width: 100vw;
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+button {
+    cursor: pointer;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    color: var(--text);
+}
+
+button:disabled {
+    color: #3d3d3d;
+    background-color: #ffffff40;
+    cursor: not-allowed;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 12px;
+    width: 100%;
+}
+
+#caixaPokemons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px;
+}
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 124px;
+    height: 124px;
+    border: 1px solid #00000060;
+    padding: 4px;
+}
+
+
+.loader {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 8px solid var(--text);
+    border-top: 8px solid var(--accent);
+    border-radius: 50%;
+    animation: rodar 2s linear infinite;
+}
+
+@keyframes rodar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
