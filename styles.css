@@ -26,6 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 12px;
+    font-family: Roboto, Arial, Helvetica, sans-serif
 }
 
 button {
@@ -80,6 +81,16 @@ button:disabled {
     border-top: 8px solid var(--accent);
     border-radius: 50%;
     animation: rodar 2s linear infinite;
+}
+
+a {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #000
 }
 
 @keyframes rodar {
