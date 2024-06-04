@@ -22,7 +22,7 @@ body {
     color: var(--text);
     width: 100vw;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     padding: 12px;
@@ -40,7 +40,7 @@ button {
 
 button:disabled {
     color: #3d3d3d;
-    background-color: #ffffff40;
+    background-color: #00000040;
     cursor: not-allowed;
 }
 
