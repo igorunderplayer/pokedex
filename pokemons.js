@@ -33,14 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(url, { headers: { "Accept": "*" } })
             .then(res => res.json())
             .then(data => {
-                apiPaginaAnterior = data.previous
-                apiPaginaProximo = data.next
-                pokemons = data.results
+                apiPaginaAnterior = data.previous;
+                apiPaginaProximo = data.next;
+                pokemons = data.results;
 
                 caixaPokemons.innerHTML = "";
                 pokemons.forEach(pokemon => {
                     // Extrai apenas o ID do pokemon para obter sprite do pokemon (remove link da api original e remove o / no final)
-                    const urlImagemPokemon = API_IMAGENS + pokemon.url.split("pokemon")[1].slice(0, -1) + ".png"
+                    const urlImagemPokemon = API_IMAGENS + pokemon.url.split("pokemon")[1].slice(0, -1) + ".png";
 
                     const containerPokemon = document.createElement("div");
                     const imagemPokemon = document.createElement("img");
@@ -50,18 +50,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     nomePokemon.textContent = pokemon.name;
 
-                    imagemPokemon.width = 96
-                    imagemPokemon.height = 96
-                    imagemPokemon.src = urlImagemPokemon
+                    imagemPokemon.width = 96;
+                    imagemPokemon.height = 96;
+                    imagemPokemon.src = urlImagemPokemon;
 
                     containerPokemon.append(nomePokemon);
                     containerPokemon.append(imagemPokemon);
                     caixaPokemons.append(containerPokemon);
 
-                    btnProximo.disabled = !apiPaginaProximo
-                    btnAnterior.disabled = !apiPaginaAnterior
+                    btnProximo.disabled = !apiPaginaProximo;
+                    btnAnterior.disabled = !apiPaginaAnterior;
 
                 });
             });
     }
-})
+});
