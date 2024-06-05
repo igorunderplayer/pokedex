@@ -58,6 +58,8 @@ button:disabled {
     flex-wrap: wrap;
     gap: 16px;
     padding: 12px;
+    align-items: center;
+    justify-content: center;
 }
 
 .pokemon {
