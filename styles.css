@@ -1,7 +1,7 @@
 :root {
     --background: #f2f2f2;
     --text: #000000;
-    --accent: #ff0000;
+    --accent: #ff0d0d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,10 +17,21 @@
     box-sizing: border-box;
 }
 
+a {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #000
+}
+
 body {
     background-color: var(--background);
     color: var(--text);
     width: 100vw;
+    height: 100vh;
     align-items: center;
     overflow-x: hidden;
     display: flex;
@@ -62,6 +73,38 @@ button:disabled {
     justify-content: center;
 }
 
+#modalContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000080;
+    cursor: pointer;
+    z-index: 99;
+}
+
+#modalConteudo {
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #ffffff60;
+    cursor: auto;
+    position: relative;
+}
+
+#fecharModal {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+
 .pokemon {
     display: flex;
     flex-direction: column;
@@ -70,8 +113,16 @@ button:disabled {
     min-height: 124px;
     border: 1px solid #00000060;
     padding: 4px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.2s;
 }
 
+.pokemon:hover {
+    transform: translateY(-8px);
+    box-shadow: #00000060 2px 8px;
+    background-color: #ff0d0d;
+}
 
 .loader {
     width: 50px;
@@ -83,16 +134,6 @@ button:disabled {
     border-top: 8px solid var(--accent);
     border-radius: 50%;
     animation: rodar 2s linear infinite;
-}
-
-a {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: #000
 }
 
 @keyframes rodar {
