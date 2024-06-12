@@ -62,13 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function buscarPokemons(url) {
         const newURL = new URL(url);
-        let qtdLimit = Number(pokemonQtdInput.value);
 
-        if (isNaN(qtdLimit) || qtdLimit < 0) {
-            qtdLimit = POKE_QUANTIDADE;
-        }
-
-        newURL.searchParams.set("limit", qtdLimit);
+        newURL.searchParams.set("limit", quantidadePokemon);
 
         pokemons = [];
         pokemonsFiltrado = [];
