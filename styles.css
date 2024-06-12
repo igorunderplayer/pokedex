@@ -55,6 +55,16 @@ button:disabled {
     cursor: not-allowed;
 }
 
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+}
+
+input[type=number] {
+    width: 72px;
+}
+
 #buttons {
     display: flex;
     flex-direction: row;
@@ -100,7 +110,7 @@ button:disabled {
 
 #fecharModal {
     position: absolute;
-    top: 12px;
+    top: 8px;
     right: 12px;
     cursor: pointer;
 }
